@@ -37,21 +37,6 @@ def get_training_data():
 	f.close()
 	
 	return training_data
-	
-# Get Validation Data from the input file
-def get_validation_data():
-	f = open('validation.txt', 'r')
-	validation_data = []
-	for l in f.readlines():
-		l = l.strip()
-		tweet_details = l.split(' ')
-		tweet_id = tweet_details[0]
-		tweet_words = extract_words(tweet_details[1:])
-		validation_data.append([tweet_id, '', tweet_words])
-
-	f.close()
-
-	return validation_data
 
 # Get Test Data from the input file
 def get_test_data():
